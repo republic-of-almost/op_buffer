@@ -85,15 +85,15 @@ struct context_data
   // -- Methods -- //
 
   void              initial_reserve();
-  resource_id       add_shader();
-  resource_id       add_shader_data();
-  resource_id       add_target();
-  resource_id       add_texture();
-  resource_id       add_geometry();
-  resource_id       add_index();
-  resource_id       add_vertex_format();
-  resource_id       add_rasterizer();
-  resource_id       add_texture_filter();
+  uint32_t          add_shader();
+  uint32_t          add_shader_data();
+  uint32_t          add_target();
+  uint32_t          add_texture();
+  uint32_t          add_geometry();
+  uint32_t          add_index();
+  uint32_t          add_vertex_format();
+  uint32_t          add_rasterizer();
+  uint32_t          add_texture_filter();
 
   // -- Alloc / Free -- //
 

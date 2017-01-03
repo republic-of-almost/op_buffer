@@ -25,3 +25,73 @@ opContextCreate()
 
 
 // -- Context Support -- //
+
+
+uint8_t
+opContext1DTextureSupport(const opContext* ctx)
+{
+  return 0;
+}
+
+
+uint8_t
+opContext3DTextureSupport(const opContext* ctx)
+{
+  return 0;
+}
+
+
+uint32_t
+opContext1DTextureMaxWidth(const opContext* ctx)
+{
+  return 0;
+}
+
+
+uint32_t
+opContext2DTextureMaxWidth(const opContext* ctx)
+{
+  return 0;
+}
+
+
+uint32_t
+opContext2DTextureMaxHeight(const opContext* ctx)
+{
+  return 0;
+}
+
+
+uint32_t
+opContext3DTextureMaxWidth(const opContext* ctx)
+{
+  return 0;
+}
+
+
+uint32_t
+opContext3DTextureMaxHeight(const opContext* ctx)
+{
+  return 0;
+}
+
+
+uint32_t
+opContext3DTextureMaxDepth(const opContext* ctx)
+{
+  return 0;
+}
+
+
+uint8_t
+opContextAnisotropicSupport(const opContext* ctx)
+{
+  return 0;
+}
+
+
+float
+opContextAnisotropicMax(const opContext* ctx)
+{
+  return 0.f;
+}
