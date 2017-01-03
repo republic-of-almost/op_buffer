@@ -21,6 +21,7 @@
 
 #else
 
+// Get rid of this.
 #define API op::unsupported
 
 #endif
