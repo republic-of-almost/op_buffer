@@ -1,5 +1,6 @@
 #include "buffer_impl.hpp"
 #include "context_impl.hpp"
+#include "common_impl.hpp"
 
 #include "../../include/op/buffer.hpp"
 #include "../../include/op/context.hpp"
@@ -17,41 +18,7 @@ namespace {
 
 op::command::cmd_api_function api_functions[op::command::COUNT] {0};
 
-allocCallback   alloc_cb   = nullptr;
-reallocCallback realloc_cb = nullptr;
-freeCallback    free_cb    = nullptr;
-uintptr_t       user_data  = 0;
-
 } // anon ns
-
-
-
-void
-opBufferAllocCallback(const allocCallback cb)
-{
-  alloc_cb = cb;
-}
-
-
-void
-opBufferResizeCallback(const reallocCallback cb)
-{
-  realloc_cb = cb;
-}
-
-
-void
-opBufferDestroyCallback(const freeCallback cb)
-{
-  free_cb = cb;
-}
-
-
-void
-opBufferUserData(const uintptr_t ud)
-{
-  user_data = ud;
-}
 
 
 opBuffer*
@@ -59,10 +26,10 @@ opBufferCreate()
 {
   opBuffer *buffer = new opBuffer;
 
-  buffer->data.alloc_cb   = alloc_cb;
-  buffer->data.realloc_cb = realloc_cb;
-  buffer->data.destroy_cb = free_cb;
-  buffer->data.user_data  = user_data;
+  buffer->data.alloc_cb   = getCallbackAlloc();
+  buffer->data.realloc_cb = getCallbackRealloc();
+  buffer->data.destroy_cb = getCallbackFree();
+  buffer->data.user_data  = getCallbackUserData();
   buffer->data.initial_reserve();
 
   op::unsupported::initialize(api_functions, op::command::COUNT);

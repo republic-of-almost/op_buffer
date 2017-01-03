@@ -77,10 +77,10 @@ struct context_data
 
   // -- Callbacks -- //
 
-  allocation_cb alloc_cb;
-  resize_cb     realloc_cb;
-  free_cb       destroy_cb;
-  uintptr_t     user_data;
+  allocCallback     alloc_cb;
+  reallocCallback   realloc_cb;
+  freeCallback      destroy_cb;
+  uintptr_t         user_data;
 
   // -- Methods -- //
 
@@ -104,6 +104,17 @@ struct context_data
 
   void              vlog(const char *output, va_list args);
   void              log(const char *output, ...);
+
+  // -- Support Data -- //
+
+  uint32_t          texture_1D_max_width;
+  uint32_t          texture_2D_max_width;
+  uint32_t          texture_2D_max_height;
+  uint32_t          texture_3D_max_width;
+  uint32_t          texture_3D_max_height;
+  uint32_t          texture_3D_max_depth;
+  float             anisotropic_max_multiplier;
+
 };
 
 

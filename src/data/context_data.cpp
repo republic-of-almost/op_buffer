@@ -12,7 +12,7 @@ context_data::initial_reserve()
 {
   auto resource_alloc = [](const uint32_t init_count,
                            const uint32_t init_bytes,
-                           const allocation_cb alloc_cb,
+                           const auto alloc_cb,
                            const uintptr_t user_data,
                            auto out_resource_ptr,
                            size_t *out_set_capacity,
