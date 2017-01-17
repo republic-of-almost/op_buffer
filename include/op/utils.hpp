@@ -6,6 +6,7 @@
 #include "common.hpp"
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 
 inline uint8_t
